@@ -1,0 +1,13 @@
+; last update: August 31, 2021
+; setup Chandalar IO to drive
+; IO_18 (GPIO4) -> RESET
+; IO_21 (GPIO5) -> USER_BUTTON
+; IO_22 (GPIO6) -> BOOTSTRAP IO_20 (CS)
+; IO_26 (GPIO1) -> BOOTSTRAP IO_19 (MOSI)
+
+; disable IO
+w4 0x40004c48 0x120
+w4 0x40004c54 0x120
+w4 0x40004c58 0x120
+w4 0x40004C60 0x120
+exit

@@ -1,0 +1,19 @@
+; last update: August 31, 2021
+; setup Chandalar IO to drive
+; IO_18 (GPIO4) -> RESET
+; IO_21 (GPIO5) -> USER_BUTTON
+; IO_22 (GPIO6) -> BOOTSTRAP IO_20 (CS)
+; IO_26 (GPIO1) -> BOOTSTRAP IO_19 (MOSI)
+; set all GPIO to 0 & wait for 50ms
+w4 0x40005104 0x0
+sleep 50
+
+; Release USER Button, wait for 50ms:
+; Release Reset and wait for 6s:
+; CS = 0 & MOSI = 0: Boot from Flash
+; USER button = 0: this cause bootloader to load and detect Uset Button Low to go into app mode
+w4 0x40005104 0x20
+sleep 50
+w4 0x40005104 0x30
+sleep 6000
+exit

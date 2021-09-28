@@ -1,0 +1,18 @@
+; last update: August 31, 2021
+; setup Chandalar IO to drive
+; IO_18 (GPIO4) -> RESET
+; IO_21 (GPIO5) -> USER_BUTTON
+; IO_22 (GPIO6) -> BOOTSTRAP IO_20 (CS)
+; IO_26 (GPIO1) -> BOOTSTRAP IO_19 (MOSI)
+; set all GPIO to 0 & wait for 50ms
+w4 0x40005104 0x0
+sleep 50
+
+; Release Reset and wait for 50ms:
+; CS = 0 & MOSI = 0: Boot from Flash
+; USER button = 0: this cause bootloader to load and detect Uset Button Low to go into flash mode
+; wait for 10s to allow system to detect USB
+w4 0x40005104 0x10
+sleep 10000
+exit
+

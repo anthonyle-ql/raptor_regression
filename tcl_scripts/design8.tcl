@@ -1,0 +1,9 @@
+compile_design /home/qlblue/anthony/raptor_regression/tests/design8/af1024x16_1024x16.v /home/qlblue/anthony/raptor_regression/tests/design8/AL4S3B_Fabric_IP.v /home/qlblue/anthony/raptor_regression/tests/design8/AL4S3B_Fabric_QL_Reserved.v /home/qlblue/anthony/raptor_regression/tests/design8/AL4S3B_Fabric_Registers.v /home/qlblue/anthony/raptor_regression/tests/design8/AL4S3B_Fabric_Top.v /home/qlblue/anthony/raptor_regression/tests/design8/f512x8_512x8.v /home/qlblue/anthony/raptor_regression/tests/design8/f512x16_512x16.v /home/qlblue/anthony/raptor_regression/tests/design8/in_vga_wrapper_Top.v /home/qlblue/anthony/raptor_regression/tests/design8/UART_16550_Interrupt_Control.v /home/qlblue/anthony/raptor_regression/tests/design8/UART_16550_Registers.v /home/qlblue/anthony/raptor_regression/tests/design8/UART_16550_Rx_FIFO.v /home/qlblue/anthony/raptor_regression/tests/design8/UART_16550_Rx_Logic.v /home/qlblue/anthony/raptor_regression/tests/design8/UART_16550_Tx_FIFO.v /home/qlblue/anthony/raptor_regression/tests/design8/UART_16550_Tx_Logic.v /home/qlblue/anthony/raptor_regression/tests/design8/UART_16550.v /home/qlblue/anthony/raptor_regression/tests/design8/vga_frame_capture.v /home/qlblue/anthony/raptor_regression/tests/design8/vga_rx_dma_ctrl.v /home/qlblue/anthony/raptor_regression/tests/design8/vga_rx_fifo_interface.v /home/qlblue/anthony/raptor_regression/tests/design8/vga_rx_reg.v --part RAPIDMATRIX --pkg PU64 --top top --working_dir /home/qlblue/anthony/raptor_regression/result/design8 --load_qdc /home/qlblue/anthony/raptor_regression/tests/s3b_edif/design8.qdc
+#load_design {/home/qlblue/anthony/raptor_regression/tests/s3b_edif/design8.edf} --load_qdc {/home/qlblue/anthony/raptor_regression/tests/s3b_edif/design8.qdc} --working_dir {/home/qlblue/anthony/raptor_regression/result/design8} --part RAPIDMATRIX --pkg PU64 --foundry GF --node 40 
+save_project  
+run_till router 
+run_sta  
+run_pe  
+save_project
+exit  
+
